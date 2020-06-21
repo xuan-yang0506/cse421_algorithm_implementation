@@ -54,7 +54,7 @@ public class TopologicalSortSolver {
         // number of incoming edges to each node
         int[] count = new int[graph.numberOfVertices()];
         for (int i = 0; i < graph.numberOfVertices(); i++) {
-            count[i] = graph.getNeighbors(i).size();
+            count[i] = graph.getParents(i).size();
         }
 
         // create a set of nodes with no incoming edges

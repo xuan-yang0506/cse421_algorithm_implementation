@@ -45,4 +45,14 @@ public class DirectedGraph implements Graph {
         }
         return output;
     }
+
+    public List<Integer> getParents(int vertex) {
+        List<Integer> output = new LinkedList<>();
+        for (int i = 0; i < matrix.length; i++) {
+            if (matrix[i][vertex] != 0) {
+                output.add(i);
+            }
+        }
+        return output;
+    }
 }

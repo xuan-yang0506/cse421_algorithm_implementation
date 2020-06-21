@@ -27,4 +27,9 @@ public class UndirectedGraph implements Graph {
     public List<Integer> getNeighbors(int vertex) {
         return null;
     }
+
+    @Override
+    public List<Integer> getParents(int vertex) {
+        return null;
+    }
 }

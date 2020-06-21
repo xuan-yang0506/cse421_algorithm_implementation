@@ -8,5 +8,5 @@ public interface Graph {
     public void addEdge(int from, int to);
     public void removeEdge(int from, int to);
     public List<Integer> getNeighbors(int vertex);
-
+    public List<Integer> getParents(int vertex);
 }
