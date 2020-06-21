@@ -36,7 +36,7 @@ public class TopologicalSortSolver {
             Initialization:
                 count[w] = 0 for all w
                 count[w]++ for all edges (v,w) O(m + n)
-                S = S È {w} for all w with count[w]=0
+                S = S UNION {w} for all w with count[w]=0
             Main loop:
             while S not empty
                 • remove some v from S
