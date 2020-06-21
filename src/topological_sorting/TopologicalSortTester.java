@@ -5,6 +5,7 @@ import utils.DirectedGraph;
 import utils.Graph;
 
 import java.util.List;
+import java.util.Random;
 
 public class TopologicalSortTester {
     @Test
@@ -23,8 +24,15 @@ public class TopologicalSortTester {
         graph.addEdge(4, 6);
         graph.addEdge(5, 6);
 
+//        graph.addEdge(1, 0);
+//        graph.addEdge(2, 0);
+//        graph.addEdge(3, 1);
+//        graph.addEdge(3, 2);
+
         TopologicalSortSolver solver = new TopologicalSortSolver(graph);
         List<Integer> topologicalSorted = solver.returnTopologicalSortedList();
+        System.out.println(topologicalSorted);
+
         assert TopologicalSortSolver.isTopologicalSorted(topologicalSorted, graph);
     }
 }
