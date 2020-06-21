@@ -24,7 +24,7 @@ public class DirectedGraph implements Graph {
     }
 
     public void addEdge(int from, int to) {
-        addEdge(from, to, 0);
+        addEdge(from, to, 1);
     }
 
     @Override
