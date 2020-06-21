@@ -57,13 +57,22 @@ public class TopologicalSortSolver {
             count[i] = graph.getNeighbors(i).size();
         }
 
-        // set of nodes with no incoming edges
-        Queue<Integer> noIncomingEdgeSet = new LinkedList<>();
+        // create a set of nodes with no incoming edges
+        // create a set of all nodes first, then remove every possible neighbors
+        Set<Integer> all = new HashSet<>();
         for (int i = 0; i < graph.numberOfVertices(); i++) {
-            if (graph.getNeighbors(i).size() == 0) {
-                noIncomingEdgeSet.add(i);
+            all.add(i);
+        }
+        for (int i = 0; i < graph.numberOfVertices(); i++) {
+            List<Integer> neighbors = graph.getNeighbors(i);
+            for (int n : neighbors) {
+                if (all.contains(n)) {
+                    all.remove(n);
+                }
             }
         }
+        Queue<Integer> noIncomingEdgeSet = new LinkedList<>(all);
+
 
         // main loop:
         List<Integer> output = new LinkedList<>();
