@@ -89,6 +89,11 @@ public class TopologicalSortSolver {
             }
         }
 
+        // no topological sort is possible
+        if (output.size() < graph.numberOfVertices()) {
+            output.clear();
+        }
+
         return output;
     }
 
@@ -105,7 +110,7 @@ public class TopologicalSortSolver {
             // check every neighbor of this vertices, if any of them appears ahead of it
             // in the list, return false
             for (int neighbor : g.getNeighbors(current)) {
-                if (list.indexOf(neighbor) >= i) {
+                if (list.indexOf(neighbor) <= i) {
                     return false;
                 }
             }
