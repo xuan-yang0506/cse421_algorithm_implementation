@@ -1,3 +1,8 @@
+/**
+ * Created by Sean Yang on June 28, 2020
+ * This program is an implementation of the weighted interval scheduling algorithm introduced in CSE421.
+ */
+
 package dynamic_programming;
 
 import java.util.Arrays;
@@ -5,6 +10,7 @@ import java.util.Comparator;
 
 public class IntervalScheduling {
 
+    // weighted job class
     private static class Job {
         int startTime;
         int endTime;
